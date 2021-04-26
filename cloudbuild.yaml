@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t',  'gcr.io/deft-duality-311814/fadox/kodic:$SHORT_SHA', '.']
+  args: ['build', '-t',  'gcr.io/deft-duality-311814/kodic:$SHORT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push',  'gcr.io/deft-duality-311814/fadox/kodic:$SHORT_SHA']
+  args: ['push',  'gcr.io/deft-duality-311814/kodic:$SHORT_SHA']
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'kodic', '--region=europe-west3', '--platform=managed', '--image=gcr.io/deft-duality-311814/fadox/kodic:$SHORT_SHA']
+  args: ['beta', 'run', 'deploy', 'kodic', '--region=europe-west3', '--platform=managed', '--image=gcr.io/deft-duality-311814/kodic:$SHORT_SHA']
